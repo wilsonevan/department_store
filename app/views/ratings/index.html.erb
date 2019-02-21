@@ -1,0 +1,12 @@
+<h1>All Ratings for <%= @item.name %> </h1>
+<hr />
+<h4> Average Rating: <%= @item.average_rating %> </h4>
+<hr />
+<ul>
+  <% @ratings.each do |rating| %>
+    <li> <%= rating.value %> stars </li>
+    <body> - Submitted on: <%= rating.created_at %> </body>
+    <br />
+  <% end %>
+</ul>
+<%= link_to 'Back to Items', department_item_path(@item[:department_id], @item[:id]) %>

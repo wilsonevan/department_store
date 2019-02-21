@@ -3,10 +3,8 @@ class RatingsController < ApplicationController
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
   
   def index
-    binding.pry
     @ratings = @item.ratings
-    @average_rating = Rating.average_rating(@item)
-    binding.pry
+    # @average_rating = Rating.average_rating(@item)
   end
 
   def show
