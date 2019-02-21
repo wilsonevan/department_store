@@ -1,0 +1,12 @@
+<h1><%= @item.id ? 'Edit Item' : 'Create Item' %></h1>
+<hr />
+<%= form_for [@item, @rating] do |f| %>
+  <%= f.label 'Rating (0-5 stars)' %>
+  <%= f.text_field :value, required: true, autofocus: true %>
+  <%# <br />
+  <%= f.label :body%>
+  <%# <%= f.text_area :body %> 
+  <br />
+  <br />
+  <%= f.submit %>
+<% end %>

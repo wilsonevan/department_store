@@ -1,0 +1,10 @@
+<h1> <%= @item.name %> </h1> 
+<h4> Your Rating: <%= @rating.value %> stars </h4> 
+<h4> Date: <%= @rating.created_at %> </h4>
+<hr />
+
+<%= link_to 'Edit Rating', edit_item_rating_path([@item, @rating]) %>
+<br />
+<%= link_to 'Delete Rating', [@item, @rating], method: :delete %>
+<br />
+<%= link_to 'Back to Items', department_items_path([@department, @item]) %>

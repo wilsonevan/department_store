@@ -1,14 +1,17 @@
 class RatingsController < ApplicationController
-  before_action :set_rating
+  before_action :set_item
   before_action :set_rating, only: [:show, :edit, :update, :destroy]
   
   def index
+    binding.pry
     @ratings = @item.ratings
+    @average_rating = Rating.average_rating(@item)
+    binding.pry
   end
 
   def show
     # binding.pry
-    @average_rating = @item.average
+   
   end
 
   def new
