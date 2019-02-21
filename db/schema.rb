@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_225442) do
+ActiveRecord::Schema.define(version: 2019_02_21_030426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 2019_02_20_225442) do
     t.index ["department_id"], name: "index_items_on_department_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "value"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_ratings_on_item_id"
+  end
+
   create_table "rename_item_desciption_column_to_descriptions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,4 +57,5 @@ ActiveRecord::Schema.define(version: 2019_02_20_225442) do
 
   add_foreign_key "comments", "items"
   add_foreign_key "items", "departments"
+  add_foreign_key "ratings", "items"
 end
