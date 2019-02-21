@@ -1,11 +1,27 @@
-<h1>Click a Department To View Associated Items</h1>
-<hr />
-<ul>
+<h1 class="ui header">Departments</h1>
+<table class="ui striped table">
+  <thead>
+    <tr class="center aligned">
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  
   <% @departments.each do |department| %>
-    <li> <%= link_to department.name, department %> </li>
-    <body> - <%= department.description %> </body>
+    <tbody>
+      <tr class="center aligned">
+        <td>
+          <h3> <%= department.name %> </h3>
+          <div class="image">
+          <img class="ui avatar image small" src="https://robohash.org/<%= department.avatar %>?set=set4" />
+          </div>
+        </td>
 
-  <% end %>
-</ul>
-<hr />
-<%= link_to 'Create a new department', new_department_path %>
+        <td><%= link_to "Show", department_path(department) %></td>
+        <td><%= link_to "Edit", edit_department_path(department) %></td>
+        <td><%= link_to "Delete", department_path(department), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+<%= link_to "New Department", new_department_path %>

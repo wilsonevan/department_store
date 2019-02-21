@@ -16,3 +16,26 @@
 <%= link_to 'Delete Department', @department, method: :delete %>
 <br />
 <%= link_to 'Back to All Departments', departments_path %>
+
+<div class="ui card">
+  <div class="image">
+    <img class="ui avatar image large" src="https://robohash.org/<%= @department.avatar %>?set=set4" />
+  </div>
+  <div class="content">
+    <p class="header">
+      <%= @department.name %> Department
+      <%# <%= @department.description %> 
+    </p>
+    <div>
+      <%=@department.description%>
+    </div>
+    <div class="description">
+      <span class="date"> <%=@department.created_at%> </span>
+    </div>
+    <br />
+    <div class="extra content">
+      <%= link_to 'Edit', edit_department_path(@department), class: "ui button yellow" %>
+      <%= link_to 'Delete', @department, method: :delete, class: "ui button red" %>
+    </div>
+  </div>
+ </div> 

@@ -1,0 +1,2 @@
+class AddAvatarToDepartment < ApplicationRecord
+end
