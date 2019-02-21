@@ -1,0 +1,12 @@
+<h1><%= @item.id ? 'Edit Comment' : 'Create Comment' %></h1>
+<hr />
+<%= form_for [@item, @comment] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, required: true, autofocus: true %>
+  <br />
+  <%= f.label :body%>
+  <%= f.text_area :body %>
+  <br />
+  <br />
+  <%= f.submit %>
+<% end %>

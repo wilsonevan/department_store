@@ -53,6 +53,7 @@ private
   end
 
   def set_department
+    # binding.pry
     @department = Department.find(params[:department_id])
   end
 

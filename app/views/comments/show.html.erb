@@ -1,0 +1,10 @@
+<h1> <%= @comment.title %> </h1> 
+<h4> <%= @comment.body %> </h4> 
+<h4> Date: <%= @comment.created_at %> </h4>
+<hr />
+
+<%= link_to 'Edit Comment', edit_item_comment_path([@item, @comment]) %>
+<br />
+<%= link_to 'Delete Comment', [@item, @comment], method: :delete %>
+<br />
+<%= link_to 'Back to Items', department_items_path([@department, @item]) %>

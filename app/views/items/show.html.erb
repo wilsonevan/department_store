@@ -2,7 +2,16 @@
 <h4> Description: <%= @item.description %> </h4> 
 <h4> Price: $<%= @item.price %> </h4>
 <hr />
-
+<h2> Comments </h2>
+<ul>
+  <% @item.comments.each do |comment| %>
+    <%# <%= binding.pry %>
+    <li> <%= link_to comment.title, [@item, comment] %> </li>
+    <body> - <%= comment.author %> </body>
+  <% end %>
+</ul>
+<%= link_to 'Add Comment', new_item_comment_path(@item) %>
+<hr />
 <%= link_to 'Edit Item', edit_department_item_path([@department, @item]) %>
 <br />
 <%= link_to 'Delete Item', [@department, @item], method: :delete %>

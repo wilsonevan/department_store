@@ -1,0 +1,10 @@
+<h1> <%= @item.name %> </h1>
+<hr />
+<ul>
+  <% @comment.each do |comment| %>
+    <li> <%= link_to comment.title, comment %> </li>
+    <body> - <%= comment.author %> </body>
+  <% end %>
+</ul>
+<hr />
+<%= link_to 'Create a new comment', new_comment_path %>

@@ -1,2 +1,0 @@
-class RenameItemDesciptionColumnToDescription < ApplicationRecord
-end
